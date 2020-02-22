@@ -93,7 +93,7 @@ body {
     align-items: center;
     width: 85%;
 }
-.slider .wrapper>img:hover {
+.slider .wrapper>img {
     cursor: pointer;
 }
 .services {
@@ -134,8 +134,8 @@ body {
 }
 .service-item__title {
     grid-area: title;
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin-top: 1px;
+    margin-bottom: 9px;
     font-size: 18px;
     line-height: 18px;
     font-weight: 900;
@@ -151,10 +151,10 @@ body {
 }
 .service-item__img-container {
     grid-area: img;
-    margin-left: 1px;
+    /* margin-left: 1px; */
     display: flex;
-    width: 59px;
-    height: 59px;
+    width: 60px;
+    height: 60px;
     margin-top: 2px;
     box-sizing: border-box;
     justify-content: center;
