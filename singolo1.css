@@ -1,10 +1,7 @@
 body {
-    margin: 0;
-    font-family: 'Lato', sans-serif;
-}
-.wrapper-outside {
     width: 1020px;
     margin: auto;
+    font-family: 'Lato', sans-serif;
 }
 .wrapper {
     width: 1020px;
