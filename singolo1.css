@@ -108,7 +108,7 @@ body {
     color: #767e9e;
     font-size: 18px;
     line-height: 30px;
-    font-weight: 100;
+    font-weight: 300;
 }
 .layout-3-column {
     display: grid;
@@ -122,7 +122,7 @@ body {
     "img title"
     "img description"
     ;
-    grid-gap:0px 20px;
+    grid-gap:0px 19px;
 }
 .service-item__title {
     grid-area: title;
