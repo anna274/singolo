@@ -59,6 +59,7 @@ p {
     border: 1px solid #666d89;
     border-radius: 5px;
     box-sizing: border-box;
+
 }
 .portfolio__tags {
     display: flex;

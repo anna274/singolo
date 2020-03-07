@@ -49,6 +49,13 @@ p {
     display: inline-block;
     background-position: center;
     background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+.ico_round {
+    border: 1px solid #666d89;
+    border-radius: 50%;
 }
 
 .service-item__ico {
@@ -57,6 +64,8 @@ p {
     border: 2px solid #666d89;
     border-radius: 50%;
 }
+
+
 
 .ico-pen {
     background-image: url(./assets/img/icons/pen.png);
@@ -82,10 +91,50 @@ p {
     background-image: url(./assets/img/icons/star.png);
 }
 
+.ico-facebook {
+    background-image:  url(./assets/img/icons/facebook.png);
+}
+
+.ico-google {
+    background-image:  url(./assets/img/icons/google+.png);
+}
+
+.ico-twitter {
+    background-image:  url(./assets/img/icons/twitter.png);
+}
+
+.ico-linkedin {
+    background-image:  url(./assets/img/icons/linkedin.png);
+}
+
+.tag {
+    font-size: 12px;
+    line-height: 20px;
+    color: #767e9e;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    padding: 0 7px;
+    border: 1px solid #666d89;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.tag_selected {
+    color: #dedede;
+    border-color: #dedede;
+}
+
 .layout-3-column {
     display: grid;
     grid-template-columns: repeat(3, 300px);
     grid-gap: 37px 20px;
+}
+
+.layout-4-column {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
 }
 
 .wrapper {
@@ -189,7 +238,7 @@ p {
 }
 
 .services {
-    padding: 68px 0;
+    padding: 68px 0 65px 0;
     background-color: #f2f2f2;
     border-bottom: 6px solid #ffffff;
 }
@@ -233,8 +282,81 @@ p {
     color: #767e9e;
 }
 
+.portfolio {
+    padding: 70px 0 67px 0;
+    background-color: #2d303a;
+    border-bottom: 6px solid #323746;
+    /* letter-spacing: -0.2px; */
+}
 
+.portfolio__title {
+    margin-bottom: 27px;
+    color: #666d89;
+}
 
+.portfolio__text {
+    margin-bottom: 11px;
+    color: #666d89;
+}
+
+.portfolio__tags {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 19px;
+}
+
+.portfolio__tags > .tag {
+    margin-left: 10px;
+}
+
+.portfolio__tags > .tag:first-child {
+    margin-left: 0;
+}
+
+.about-us {
+    padding: 68px 0 67px 0;
+    background-color: #f2f2f2;
+    border-bottom: 6px solid #ffffff;
+}
+.about-us__title {
+    margin-bottom: 26px;
+    line-height: 2rem;
+    color: #666d89;
+}
+
+.about-us__text {
+    margin-bottom: 45px;
+    color: #767e9e;
+    letter-spacing: -0.2px;
+    text-align: justify;
+}
+
+.employee__content {
+    padding: 15px 0 23px 0;
+}
+
+.employee__name {
+    margin-bottom: 9px;
+    color: #666d89;
+}
+
+.employee__text {
+    color: #767e9e;
+    text-align: justify;
+}
+
+.employee__icons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.employee__icons > .ico {
+    margin-left: 8px;
+}
+
+.employee__icons > .ico:first-child {
+    margin-left: 0;
+}
 
 
 
