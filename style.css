@@ -1,0 +1,244 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: auto;
+    width: 1020px;
+    font-family: "Lato", sans-serif;
+}
+
+h1, h2, h3, p, .sub-p {
+    margin: 0;
+}
+
+h1{
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 1.8rem;
+    font-weight: 900;   
+}
+
+h3 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: 900;
+}
+
+p {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    font-weight: 300;
+}
+
+.sub-p {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+    word-spacing: 0.3px;
+    text-align: justify;
+}
+
+.ico {
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.service-item__ico {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #666d89;
+    border-radius: 50%;
+}
+
+.ico-pen {
+    background-image: url(./assets/img/icons/pen.png);
+}
+
+.ico-lamp {
+    background-image: url(./assets/img/icons/bulb.png);
+}
+
+.ico-heart {
+    background-image: url(./assets/img/icons/heart.png);
+}
+
+.ico-mobile-phone {
+    background-image: url(./assets/img/icons/mobile-phone.png);
+}
+
+.ico-bubble {
+    background-image: url(./assets/img/icons/bubble.png);
+}
+
+.ico-star {
+    background-image: url(./assets/img/icons/star.png);
+}
+
+.layout-3-column {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-gap: 37px 20px;
+}
+
+.wrapper {
+    padding: 0 40px;
+}
+
+.header {
+    padding: 32px 0 32px 0;
+    box-sizing: border-box;
+    background-color: #2d303a;
+    border-bottom: 6px solid #323746;
+}
+
+.header__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;  
+}
+
+.logo {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: -0.4px;
+}
+
+.text-colored {
+    color: #f06c64;
+}
+
+.header__navigation {
+    margin-bottom: 1px;
+}
+
+.navigation {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navigation__link{
+    display: inline;
+    margin-left: 26px;
+    font-size: 12px;
+    line-height: 6px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+}
+
+.navigation__link:first-child {
+    margin-left: 0px;
+}
+
+.navigation__link_selected {
+    color: #f06c64;
+}
+
+.navigation__link::before {
+    position: relative;
+    content: '.';
+    color: #494e62;
+    left: -13px;
+    bottom: 3px;
+}
+
+.navigation__link:first-child::before {
+    display: none;
+}
+
+.navigation__link:hover {
+    color: #f06c64;
+}
+
+.slider{
+    height: 600px;
+    padding: 52px 0 57px 0;
+    box-sizing: border-box;
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;   
+}
+
+.slider__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+}
+
+.slider__wrapper>img {
+    cursor: pointer;
+}
+
+.services {
+    padding: 68px 0;
+    background-color: #f2f2f2;
+    border-bottom: 6px solid #ffffff;
+}
+
+.services__title {
+    margin-bottom: 26px;
+    line-height: 2rem;
+    color: #666d89;
+}
+
+.services__text {
+    margin-bottom: 46px;
+    color: #767e9e;
+    text-align: justify;
+    letter-spacing: -0.2px;
+}
+
+.service-item{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+}
+
+.service-item__ico {
+    margin: 1px 20px 0 1px;
+}
+
+.service-item__content {
+    width: 220px;
+    height: 86px;
+    overflow: hidden;
+}
+
+.service-item__title {
+    margin-bottom: 11px;
+    line-height: 1.6rem;
+    color: #666d89;
+}
+
+.service-item__text {
+    color: #767e9e;
+}
+
+
+
+
+
+
+
+
+
+
