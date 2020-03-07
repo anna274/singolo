@@ -445,6 +445,15 @@ p {
     padding-bottom: 18px;
 }
 
+.button-submit {
+    width: 100px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid #f48c8f;
+    background-color: #f0d8d9;
+    color: #2d303a;
+}
+
 .footer {
     padding: 22px 0 20px 0;
     background-color: #2d303a;
