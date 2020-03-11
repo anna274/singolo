@@ -247,7 +247,7 @@ p {
 }
 
 .services {
-    padding: 68px 0 64px 0;
+    padding: 68px 0 65px 0;
     background-color: #f2f2f2;
     border-bottom: 6px solid #ffffff;
 }
@@ -292,7 +292,7 @@ p {
 }
 
 .portfolio {
-    padding: 70px 0 67px 0;
+    padding: 69px 0 67px 0;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
     /* letter-spacing: -0.2px; */
@@ -322,6 +322,10 @@ p {
     margin-left: 0;
 }
 
+.portfolio__images > img:nth-child(n + 13){
+    display: none;
+}
+
 .about-us {
     padding: 68px 0 67px 0;
     background-color: #f2f2f2;
@@ -347,6 +351,8 @@ p {
 .employee__name {
     margin-bottom: 9px;
     color: #666d89;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .employee__text {
@@ -368,7 +374,7 @@ p {
 }
 
 .get-quote {
-    padding: 69px 0 49px 0;
+    padding: 69px 0 9px 0;
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
 }
