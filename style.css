@@ -326,6 +326,20 @@ p {
     display: none;
 }
 
+.portfolio__images > img {
+    cursor: pointer;
+}
+
+.portfolio__images > img:hover {
+    outline: solid 5px #F06C64;
+    outline-offset: -5px;
+}
+
+.image_selected {
+    outline: solid 5px #F06C64;
+    outline-offset: -5px;
+}
+
 .about-us {
     padding: 68px 0 67px 0;
     background-color: #f2f2f2;
