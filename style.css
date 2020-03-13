@@ -1,5 +1,6 @@
 html {
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -43,6 +44,10 @@ p {
     letter-spacing: -0.1px;
     word-spacing: 0.3px;
     text-align: justify;
+}
+
+a {
+    text-decoration: none;
 }
 
 .ico {
@@ -155,8 +160,14 @@ p {
     box-sizing: border-box;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
+    transition: top 0.5s;
 }
 
+.sticky {
+    position: sticky;
+    top: 0;
+    width: inherit;
+}
 .header__wrapper {
     display: flex;
     flex-direction: row;

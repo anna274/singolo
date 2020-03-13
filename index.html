@@ -7,17 +7,17 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header id="header" class="header">
+        <header id="home" class="header sticky">
             <div class="wrapper header__wrapper">              
                 <h1 class="logo">Singolo<span class="text-colored">*</span></h1>
                 <div class="header__navigation">
-                    <ul class="navigation">
-                        <li class="navigation__link navigation__link_selected">Home</li>
-                        <li class="navigation__link">Services</li>
-                        <li class="navigation__link">Portfolio</li>
-                        <li class="navigation__link">About</li>
-                        <li class="navigation__link">Contact</li>
-                    </ul>
+                    <div class="navigation">
+                        <a class="navigation__link navigation__link_selected" href="#home">Home</a>
+                        <a class="navigation__link" href="#services">Services</a>
+                        <a class="navigation__link" href="#portfolio">Portfolio</a>
+                        <a class="navigation__link" href="#about">About</a>
+                        <a class="navigation__link"  href="#contact">Contact</a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -31,7 +31,7 @@
                 <img src="assets/img/next.png" alt="next">
             </div>
         </div>
-        <div id="#services" class="services">
+        <div id="services" class="services">
             <div class="wrapper services__wrapper">
                 <h2 class="services__title">Our Services</h2>
                 <p class="services__text">Fusce dapibus, tellus ac curcus commodo, tortor mauris condimentum.

@@ -2,12 +2,31 @@ const NAVIGATION = document.querySelector('.navigation');
 const TAGS = document.querySelector('.portfolio__tags');
 const PARTFOLIO_IMAGES = document.querySelector(".portfolio__images");
 const PARTFOLIO_IMAGES_ALL = PARTFOLIO_IMAGES.querySelectorAll('.portfolio__images > img');
-console.log(PARTFOLIO_IMAGES);
+let prevScrollpos = window.pageYOffset;
+
+//прокрутка страницы
+
+window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.querySelector('.header').style.top = "0";
+    } else {
+        document.querySelector('.header').style.top = "-98px";
+    }
+    prevScrollpos = currentScrollPos;
+}
+
+//переключение ссылок навигации
 
 NAVIGATION.addEventListener('click', (event) =>{
-    NAVIGATION.querySelectorAll('.navigation__link').forEach(el => el.classList.remove('navigation__link_selected'));
-    event.target.classList.add('navigation__link_selected');
+    let clickedElement = event.target;
+    if(clickedElement.classList.contains('navigation__link')){
+        NAVIGATION.querySelectorAll('.navigation__link').forEach(el => el.classList.remove('navigation__link_selected'));
+        clickedElement.classList.add('navigation__link_selected');
+    }
 })
+
+// переключение тегов
 
 TAGS.addEventListener('click', (event) =>{
     TAGS.querySelectorAll('.tag').forEach(el => el.classList.remove('tag_selected'));
@@ -26,6 +45,8 @@ TAGS.addEventListener('click', (event) =>{
     }
    
 })
+
+// выделение картинок в портфолио
 
 PARTFOLIO_IMAGES.addEventListener('click', (event) =>{
     PARTFOLIO_IMAGES.querySelectorAll('img').forEach(el => el.classList.remove('image_selected'));
