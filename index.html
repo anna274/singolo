@@ -22,13 +22,26 @@
             </div>
         </header>
         <div class="slider">
-            <div class="wrapper slider__wrapper">
-                <img src="assets/img/prev.png" alt="prev">
-                <div class="slider__content">
-                    <img src="assets/img/iPhone Vertical.png" alt="iPhone Vertical">
-                    <img src="assets/img/iPhone Horizontal.png" alt="iPhone Horizontal">
+            <div class="carousel">
+                <div class="slide__container">
+                    <div id="slide-1" class="slide active">
+                        <div class="slide__content">
+                            <img src="assets/img/iPhone Vertical.png" alt="iPhone Vertical">
+                            <img src="assets/img/iPhone Horizontal.png" alt="iPhone Horizontal">
+                        </div>
+                    </div>
+                    <div id="slide-2" class="slide">
+                        <div class="slide__content">
+                            <img src="assets/img/slide-2.png">
+                        </div>
+                    </div>
                 </div>
-                <img src="assets/img/next.png" alt="next">
+                <div class="control left">
+                    <img class="arrow left" src="assets/img/prev.png" alt="prev">
+                </div>
+                <div class="control right">
+                    <img class="arrow right" src="assets/img/next.png" alt="next">
+                </div>  
             </div>
         </div>
         <div id="services" class="services">
@@ -170,7 +183,7 @@
                         <input class="input" type="email" name="email" placeholder="Email (Required)" required>
                         <input class="input" type="text" name="subject" placeholder="Subject">
                         <textarea class="textarea" rows="8" name="details" placeholder="Describe your project in detail..."></textarea>
-                        <button class="button-submit">Submit</button>
+                        <button class="button" type="button">Submit</button>
                         
                     </form>
                     <div class="get-quote__contact-info">
