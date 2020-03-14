@@ -105,3 +105,23 @@ document.querySelector('.control.right').addEventListener('click', function(){
         nextSlide(currentSlide);
     } 
 })
+
+// iPhone pisplay animation
+
+
+
+document.querySelector('.slide__container').addEventListener('click', function(event) {
+
+    let clickedElement = event.target;
+
+    if(clickedElement.getAttribute('class') == 'iPhone__button'){
+        let phoneDisplay = clickedElement.parentElement.querySelector('.iPhone__display');
+        if(phoneDisplay.classList.contains('off')){
+            phoneDisplay.classList.remove('off');
+        }else{
+            phoneDisplay.classList.add('off');
+        }
+    }
+})
+
+

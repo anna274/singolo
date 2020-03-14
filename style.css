@@ -352,6 +352,51 @@ a {
     }
 }
 
+.iPhone {
+    position: relative;
+}
+
+.iPhone__display {
+    display: none;
+    position: absolute;
+}
+
+.iPhone__button {
+    position: absolute;
+    height: 42px;
+    width: 42px;
+    cursor: pointer;
+}
+
+.iPhone__button:active{
+    box-shadow: inset 10px 10px 15px #BABABA;
+    border-radius: 50%;
+}
+
+.iPhone__display.off {
+    display: block;
+}
+
+.iPhone_vertical .iPhone__display {
+    top: 66px;
+    left: 16px;
+}
+
+.iPhone_horizontal .iPhone__display {
+    left: 133px;
+    bottom: -31px;
+    transform: rotate(90deg);
+}
+
+.iPhone_vertical .iPhone__button {
+    bottom: 36px;
+    left: 87px;
+}
+.iPhone_horizontal .iPhone__button {
+    left: 8px;
+    top: 84px;
+}
+
 .services {
     padding: 68px 0 65px 0;
     background-color: #f2f2f2;
