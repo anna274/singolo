@@ -186,13 +186,12 @@
                     commodo, tortor mauris condimentum nibh.
                 </p>
                 <div class="layout-3-column">
-                    <form class="get-quote__form" action="" method="get">
+                    <form class="get-quote__form" action="#" method="get">
                         <input class="input" type="text" name="name" placeholder="Name (Required)" required>
                         <input class="input" type="email" name="email" placeholder="Email (Required)" required>
-                        <input class="input" type="text" name="subject" placeholder="Subject">
-                        <textarea class="textarea" rows="8" name="details" placeholder="Describe your project in detail..."></textarea>
-                        <button class="button" type="button">Submit</button>
-                        
+                        <input id="subject" class="input" type="text" name="subject" placeholder="Subject">
+                        <textarea id="description" class="textarea" rows="8" name="details" placeholder="Describe your project in detail..."></textarea>
+                        <button id="button_send" type="button" class="button">SEND</button>
                     </form>
                     <div class="get-quote__contact-info">
                         <h3 class="contact-info__title">Contact information</h3>
@@ -223,6 +222,18 @@
                 </div>
             </div>
         </footer>
+        <div class="modal">
+            <div class="modal__content">
+                <h2 class="modal__header">Письмо отправлено</h2>
+                <h3 class="modal__title">Тема</h3>
+                <p id="resalt_subject" class="sub-p modal__text"></p>
+                <div>
+                <h3 class="modal__title">Описание</h3>
+                <p id="resalt_description" class="sub-p modal__text"></p>
+                </div> 
+                <button id="modal__button" class="button modal__button">OK</button>
+            </div>
+        </div>
     <script src="script.js"></script>
     </body>
 </html>

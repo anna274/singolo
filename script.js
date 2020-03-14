@@ -124,4 +124,27 @@ document.querySelector('.slide__container').addEventListener('click', function(e
     }
 })
 
+// modal window
 
+document.querySelector('#button_send').addEventListener('click', function(event){
+
+    event.preventDefault();
+    let subject = document.querySelector('#subject').value.toString();
+    if(subject === ''){
+        subject = 'Без темы';
+    }
+    document.querySelector('#resalt_subject').innerText = subject;
+
+    let description = document.querySelector('#description').value.toString();
+    if(description === ''){
+        description = 'Без описания';
+    }
+    document.querySelector('#resalt_description').innerText = description;
+    
+    document.querySelector('.modal').classList.add('active');
+})
+
+document.querySelector('#modal__button').addEventListener('click', function(){
+    document.querySelector('#resalt_subject').innerText = '';
+    document.querySelector('.modal').classList.remove('active');
+})
