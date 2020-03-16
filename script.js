@@ -50,6 +50,7 @@ TAGS.addEventListener('click', (event) =>{
 
 PARTFOLIO_IMAGES.addEventListener('click', (event) =>{
     PARTFOLIO_IMAGES.querySelectorAll('img').forEach(el => el.classList.remove('image_selected'));
+
     if(event.target.tagName === 'IMG'){
         event.target.classList.add('image_selected');
     }  
@@ -146,14 +147,27 @@ function validInput(inputElement, regex, hintElement, hintMessage){
     return true;
 }
 
+function validTextarea(textarea, maxlength, hintElement){
+    let textLength = textarea.value.toString().length;
+
+    if(textLength > maxlength){
+        hintElement.innerText = `Допустимо не более ${maxlength} символов`;
+        hintElement.classList.add('active');
+        return false;
+    }
+
+    hintElement.classList.remove('active');
+    return true;
+}
+
 function fillModal(subject, description){
 
     if(subject === ''){
-        subject = 'Без темы';
+        subject = 'Without subject';
     }
     
     if(description === ''){
-        description = 'Без описания';
+        description = 'Without description';
     }
 
     document.querySelector('#resalt_subject').innerText = subject;
@@ -173,9 +187,12 @@ document.querySelector('#button_send').addEventListener('click', function(event)
     let nameHint = document.querySelector('#name-hint')
     let emailInput = document.querySelector('#email');
     let emailHint = document.querySelector('#email-hint');
+    let description = document.querySelector('#description');
+    let descriptionHint = document.querySelector('#description-hint');
 
     if( validInput(nameInput, new RegExp(`[A-Za-z ]+`), nameHint, 'Поле должно содержать только буквы и пробелы') && 
-        validInput(emailInput, new RegExp(`^(\\w+([\\.-]?\\w+)*@\\w+\\.[A-Za-z]+)$`), emailHint, 'Поле должно иметь формат template@gmail.com')){
+        validInput(emailInput, new RegExp(`^(\\w+([\\.-]?\\w+)*@\\w+\\.[A-Za-z]+)$`), emailHint, 'Поле должно иметь формат template@gmail.com')&&
+        validTextarea(description, 10000, descriptionHint)){
 
         let subject = document.querySelector('#subject').value.toString();
         let description = document.querySelector('#description').value.toString();

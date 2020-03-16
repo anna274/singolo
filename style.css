@@ -378,7 +378,7 @@ a {
 }
 
 .iPhone_vertical .iPhone__display {
-    top: 66px;
+    top: 65px;
     left: 16px;
 }
 
@@ -681,6 +681,8 @@ a {
     background-color: #ffffff;
     font-family: "Lato", sans-serif;
     border-radius: 5px;
+    max-height: 400px;
+    overflow: auto;
 }
 
 .modal.active {
@@ -714,7 +716,7 @@ a {
     position: absolute;
     width: 0;
     height: 0;
-    bottom: 36px;
+    bottom: 35px;
     left: 15px;
     border: 0.75rem solid transparent;
     border-bottom-color: rgba(255,255,255,0.8);
@@ -730,6 +732,10 @@ a {
 
 #email-hint {
     top: 99px;
+}
+
+#description-hint {
+    bottom: 17px;
 }
 
 
