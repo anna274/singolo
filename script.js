@@ -126,25 +126,68 @@ document.querySelector('.slide__container').addEventListener('click', function(e
 
 // modal window
 
-document.querySelector('#button_send').addEventListener('click', function(event){
+function validInput(inputElement, regex, hintElement, hintMessage){
 
-    event.preventDefault();
-    let subject = document.querySelector('#subject').value.toString();
+    let inputText = inputElement.value;
+
+    if(inputElement.hasAttribute('required') && inputText === ''){
+        hintElement.innerText = 'Заполните поле';
+        hintElement.classList.add('active');
+        return false;
+    }
+
+    if(!regex.test(inputText)){
+        hintElement.innerText = hintMessage;
+        hintElement.classList.add('active');
+        return false;
+    }
+
+    hintElement.classList.remove('active');
+    return true;
+}
+
+function fillModal(subject, description){
+
     if(subject === ''){
         subject = 'Без темы';
     }
-    document.querySelector('#resalt_subject').innerText = subject;
-
-    let description = document.querySelector('#description').value.toString();
+    
     if(description === ''){
         description = 'Без описания';
     }
+
+    document.querySelector('#resalt_subject').innerText = subject;
     document.querySelector('#resalt_description').innerText = description;
-    
-    document.querySelector('.modal').classList.add('active');
+}
+
+function  cleanForm(form){
+    form.querySelectorAll('input').forEach((item) => item.value = '');
+    form.querySelectorAll('textarea').forEach((item) => item.value = '');
+}
+
+document.querySelector('#button_send').addEventListener('click', function(event){
+
+    event.preventDefault();
+
+    let nameInput = document.querySelector('#name');
+    let nameHint = document.querySelector('#name-hint')
+    let emailInput = document.querySelector('#email');
+    let emailHint = document.querySelector('#email-hint');
+
+    if( validInput(nameInput, new RegExp(`[A-Za-z ]+`), nameHint, 'Поле должно содержать только буквы и пробелы') && 
+        validInput(emailInput, new RegExp(`^(\\w+([\\.-]?\\w+)*@\\w+\\.[A-Za-z]+)$`), emailHint, 'Поле должно иметь формат template@gmail.com')){
+
+        let subject = document.querySelector('#subject').value.toString();
+        let description = document.querySelector('#description').value.toString();
+
+
+        fillModal(subject, description);
+        cleanForm(document.querySelector('#quote-form'));
+        
+        document.querySelector('.modal').classList.add('active');
+    }
 })
 
 document.querySelector('#modal__button').addEventListener('click', function(){
-    document.querySelector('#resalt_subject').innerText = '';
     document.querySelector('.modal').classList.remove('active');
 })

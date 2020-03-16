@@ -557,6 +557,7 @@ a {
 }
 
 .get-quote__form {
+    position: relative;
     grid-column-start: 1;
     grid-column-end: 3;
 }
@@ -697,4 +698,38 @@ a {
 .modal__text {
     margin-bottom: 10px
 }
+
+.warning-bubble {
+    display: none;
+    position: absolute;
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px;
+    font-size: 1.25em;
+    border-radius: 1rem;
+    left: 100px;
+}
+
+.warning-bubble:after {
+	content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 36px;
+    left: 15px;
+    border: 0.75rem solid transparent;
+    border-bottom-color: rgba(255,255,255,0.8);
+}
+
+.warning-bubble.active {
+    display: block;
+}
+
+#name-hint {
+    top: 45px;
+}
+
+#email-hint {
+    top: 99px;
+}
+
 

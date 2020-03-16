@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <title>Singolo</title>
     </head>
     <body>
         <header id="home" class="header sticky">
@@ -186,12 +187,14 @@
                     commodo, tortor mauris condimentum nibh.
                 </p>
                 <div class="layout-3-column">
-                    <form class="get-quote__form" action="#" method="get">
-                        <input class="input" type="text" name="name" placeholder="Name (Required)" required>
-                        <input class="input" type="email" name="email" placeholder="Email (Required)" required>
+                    <form id="quote-form" class="get-quote__form" action="#" method="get">
+                        <input id="name" class="input" type="text" name="name" placeholder="Name (Required)" required>
+                        <div id="name-hint" class="warning-bubble"></div>
+                        <input id="email" class="input" type="email" name="email" placeholder="Email (Required)" required>
+                        <div id="email-hint" class="warning-bubble"></div>
                         <input id="subject" class="input" type="text" name="subject" placeholder="Subject">
                         <textarea id="description" class="textarea" rows="8" name="details" placeholder="Describe your project in detail..."></textarea>
-                        <button id="button_send" type="button" class="button">SEND</button>
+                        <button id="button_send" class="button">SEND</button>
                     </form>
                     <div class="get-quote__contact-info">
                         <h3 class="contact-info__title">Contact information</h3>
