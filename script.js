@@ -78,8 +78,16 @@ PARTFOLIO_IMAGES.addEventListener('click', (event) =>{
 // slider
 
 let slides = document.querySelectorAll('.slide');
+let slider = document.querySelector('.slider');
 let currentSlide = 0;
 let isEnabled = true;
+
+function changeSliderBackground(n){
+    let slide = slides[(n + slides.length) % slides.length];
+    let newBackground = window.getComputedStyle(slide, null).getPropertyValue("background-color");
+    console.log(newBackground);
+    slider.style.background = newBackground;
+}
 
 function changeCurrentSlide(n) {
     currentSlide = (n + slides.length) % slides.length;
@@ -103,12 +111,14 @@ function showSlide (direction) {
 }
 
 function previousSlide(n) {
+    changeSliderBackground(currentSlide - 1);
     hideSlide('to-right');
     changeCurrentSlide(currentSlide - 1);
     showSlide('from-left');
 }
 
 function nextSlide(n) {
+    changeSliderBackground(currentSlide + 1);
     hideSlide('to-left');
     changeCurrentSlide(currentSlide + 1);
     showSlide('from-right');
