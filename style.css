@@ -355,6 +355,8 @@ a {
 .iPhone__display {
     display: none;
     position: absolute;
+    height: 333px;
+    width: 188px;
 }
 
 .iPhone__button {
@@ -374,7 +376,7 @@ a {
 }
 
 .iPhone_vertical .iPhone__display {
-    top: 65px;
+    top: 66px;
     left: 16px;
 }
 
@@ -477,11 +479,6 @@ a {
 
 .portfolio__images > img {
     cursor: pointer;
-}
-
-.portfolio__images > img:hover {
-    outline: solid 5px #F06C64;
-    outline-offset: -5px;
 }
 
 .image_selected {

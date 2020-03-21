@@ -2,14 +2,17 @@ const NAVIGATION = document.querySelector('.navigation');
 const TAGS = document.querySelector('.portfolio__tags');
 const PARTFOLIO_IMAGES = document.querySelector(".portfolio__images");
 const PARTFOLIO_IMAGES_ALL = PARTFOLIO_IMAGES.querySelectorAll('.portfolio__images > img');
-let prevScrollpos = window.pageYOffset;
 const HEADER = document.querySelector('.header');
+
+function removeCollectionClass(collection, className){
+    collection.forEach((el) => el.classList.remove(className));
+}
 
 //прокрутка страницы
 
-document.addEventListener('scroll', onScroll);
+document.addEventListener('scroll', switchNavigation);
 
-function onScroll(event) {
+function switchNavigation(event) {
     const curPos = window.scrollY;
     const divs =  document.querySelectorAll('body>div');
     const links = document.querySelectorAll('.header__navigation .navigation__link');
@@ -23,8 +26,6 @@ function onScroll(event) {
                 }
             })
         }
-
-        
     })
 }
 
@@ -41,11 +42,12 @@ NAVIGATION.addEventListener('click', (event) =>{
 // переключение тегов
 
 TAGS.addEventListener('click', (event) =>{
-    TAGS.querySelectorAll('.tag').forEach(el => el.classList.remove('tag_selected'));
+
+    removeCollectionClass(TAGS.querySelectorAll('.tag'), 'tag_selected')
     event.target.classList.add('tag_selected');
 
     let imagesId = event.target.getAttribute("id");
-    PARTFOLIO_IMAGES.querySelectorAll('img').forEach(el => el.classList.remove('image_selected'));
+    removeCollectionClass(PARTFOLIO_IMAGES.querySelectorAll('img'),'image_selected')
     if(imagesId == 'all'){
         PARTFOLIO_IMAGES.querySelectorAll('img').forEach(item => item.remove());
         PARTFOLIO_IMAGES.append(...PARTFOLIO_IMAGES_ALL);
@@ -55,17 +57,22 @@ TAGS.addEventListener('click', (event) =>{
             PARTFOLIO_IMAGES.insertBefore(el, PARTFOLIO_IMAGES.childNodes[0]);
         });
     }
-   
 })
 
 // выделение картинок в портфолио
 
 PARTFOLIO_IMAGES.addEventListener('click', (event) =>{
-    PARTFOLIO_IMAGES.querySelectorAll('img').forEach(el => el.classList.remove('image_selected'));
 
     if(event.target.tagName === 'IMG'){
-        event.target.classList.add('image_selected');
-    }  
+        PARTFOLIO_IMAGES.querySelectorAll('img').forEach(el => {
+            if(el === event.target){
+                console.log(el.classList.toggle('image_selected'));
+            }else{
+                el.classList.remove('image_selected');
+            }
+            
+        });
+    } 
 })
 
 // slider
@@ -122,22 +129,17 @@ document.querySelector('.control.right').addEventListener('click', function(){
 // iPhone pisplay animation
 
 
-
 document.querySelector('.slide__container').addEventListener('click', function(event) {
 
     let clickedElement = event.target;
 
     if(clickedElement.getAttribute('class') == 'iPhone__button'){
-        let phoneDisplay = clickedElement.parentElement.querySelector('.iPhone__display');
-        if(phoneDisplay.classList.contains('off')){
-            phoneDisplay.classList.remove('off');
-        }else{
-            phoneDisplay.classList.add('off');
-        }
+        clickedElement.parentElement.querySelector('.iPhone__display').classList.toggle('off');
     }
 })
 
 // modal window
+
 
 function validInput(inputElement, regex, hintElement, hintMessage){
 
@@ -187,8 +189,7 @@ function fillModal(subject, description){
 }
 
 function  cleanForm(form){
-    form.querySelectorAll('input').forEach((item) => item.value = '');
-    form.querySelectorAll('textarea').forEach((item) => item.value = '');
+    form.reset();
 }
 
 document.querySelector('#button_send').addEventListener('click', function(event){
