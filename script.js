@@ -3,17 +3,29 @@ const TAGS = document.querySelector('.portfolio__tags');
 const PARTFOLIO_IMAGES = document.querySelector(".portfolio__images");
 const PARTFOLIO_IMAGES_ALL = PARTFOLIO_IMAGES.querySelectorAll('.portfolio__images > img');
 let prevScrollpos = window.pageYOffset;
+const HEADER = document.querySelector('.header');
 
 //прокрутка страницы
 
-window.onscroll = function() {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-        document.querySelector('.header').style.top = "0";
-    } else {
-        document.querySelector('.header').style.top = "-98px";
-    }
-    prevScrollpos = currentScrollPos;
+document.addEventListener('scroll', onScroll);
+
+function onScroll(event) {
+    const curPos = window.scrollY;
+    const divs =  document.querySelectorAll('body>div');
+    const links = document.querySelectorAll('.header__navigation .navigation__link');
+
+    divs.forEach((el)=>{   
+        if(el.offsetTop - HEADER.offsetHeight <= curPos && (el.offsetTop + el.offsetHeight) > curPos){
+            links.forEach((a) => {
+                a.classList.remove('navigation__link_selected');
+                if(el.getAttribute('id') === a.getAttribute('href').substring(1)){
+                    a.classList.add('navigation__link_selected');
+                }
+            })
+        }
+
+        
+    })
 }
 
 //переключение ссылок навигации
