@@ -4,8 +4,7 @@ html {
 }
 
 body {
-    margin: auto;
-    width: 1020px;
+    margin: 0;
     font-family: "Lato", sans-serif;
 }
 
@@ -152,12 +151,15 @@ a {
 }
 
 .wrapper {
+    margin: auto;
+    max-width: 1020px;
     padding: 0 40px;
+    box-sizing: border-box;
 }
 
 .header {
     position: fixed;
-    width: inherit;
+    width: 100%;
     z-index: 1;
     padding: 32px 0 32px 0;
     box-sizing: border-box;
@@ -231,7 +233,8 @@ a {
 .slider{
     height: 600px;
     padding-top: 90px;
-    border-bottom: 6px solid #ea676b;  
+    border-bottom: 6px solid #ea676b; 
+    background-color: #F06C64; 
 }
 
 .carousel {
@@ -278,7 +281,7 @@ a {
 }
 
 .slide__content {
-    width: 85%;
+    width: 93%;
     height: 100%;
     margin: auto;
     display: flex;
@@ -640,7 +643,7 @@ a {
 .footer__wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .footer__text {
     margin-left: 2px;
@@ -735,4 +738,38 @@ a {
     bottom: 17px;
 }
 
+.hamburger {
+    position: relative;
+    display: none;
+    width: 25px;
+    height: 20px;
+}
+
+.hamburger__line {
+    display: inline-block;
+    position: absolute;
+    height: 2.4px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 5px;
+    top: calc(50% - 1.2px);
+}
+
+.hamburger::after, .hamburger::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    height: 2.4px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.hamburger::before {
+    top: 0;
+}
+
+.hamburger::after {
+    bottom: 0;
+}
 
