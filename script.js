@@ -47,14 +47,12 @@ TAGS.addEventListener('click', (event) =>{
     event.target.classList.add('tag_selected');
 
     let imagesId = event.target.getAttribute("id");
-    removeCollectionClass(PARTFOLIO_IMAGES.querySelectorAll('img'),'image_selected')
+    removeCollectionClass(PARTFOLIO_IMAGES.querySelectorAll('img'),'image_selected');
     if(imagesId == 'all'){
-        PARTFOLIO_IMAGES.querySelectorAll('img').forEach(item => item.remove());
         PARTFOLIO_IMAGES.append(...PARTFOLIO_IMAGES_ALL);
     }else{
         PARTFOLIO_IMAGES.querySelectorAll(`#${imagesId}`).forEach(el =>{
-            el.remove();
-            PARTFOLIO_IMAGES.insertBefore(el, PARTFOLIO_IMAGES.childNodes[0]);
+            PARTFOLIO_IMAGES.prepend(el);
         });
     }
 })
