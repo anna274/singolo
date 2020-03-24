@@ -399,6 +399,7 @@ a {
     position: relative;
     width: 100%;
     height: calc(100vw * 0.58);
+    max-height: 594px;
     overflow: hidden;
     margin: 0 37px;
 }
@@ -497,13 +498,13 @@ a {
 }
 
 .control.left {
-    left: 40px;
+    left: 0;
     right: auto;
 }
 
 .control.right {
     left: auto;
-    right: 40px;
+    right: 0;
 }
 
 .arrow {
@@ -552,8 +553,14 @@ a {
     }
 }
 
-
-
+@media (max-width: 375px){
+    .slider {
+        padding-top: 78px;
+    }
+    .slider .wrapper {
+        padding: 0 10px;
+    }
+}
 
 
 .services {
