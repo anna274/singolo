@@ -233,7 +233,7 @@ a {
 
 .navigation__link{
     display: inline;
-    margin-left: 26px;
+    margin-right: 26px;
     font-size: 12px;
     line-height: 6px;
     text-transform: uppercase;
@@ -243,8 +243,8 @@ a {
     cursor: pointer;
 }
 
-.navigation__link:first-child {
-    margin-left: 0px;
+.navigation__link:last-child {
+    margin-right: 0px;
 }
 
 .navigation__link_selected {
@@ -267,12 +267,18 @@ a {
     color: #f06c64;
 }
 
+.navigation-mobile__logo {
+    display: none;
+}
+
 .hamburger {
     position: absolute;
     left: 20px;
     display: none;
     width: 25px;
     height: 20px;
+    z-index: 3;
+    transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 .hamburger__line {
@@ -303,9 +309,62 @@ a {
     bottom: 0;
 }
 
+.rotate {
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
 @media (max-width: 375px){
     .header__navigation {
-        display: none;
+        background-color: #2D303A;
+        margin: 0;
+        padding: 0;
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        min-height: 100vh;
+        overflow: hidden;
+        z-index: 2;
+        padding: 232px 71px 0 71px;
+        transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .header__navigation.open{
+        left: 0;
+        outline: 375px solid rgba(45, 48, 58, 0.6);
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation-mobile__logo {
+        display: block;
+        position: absolute;
+        top: 26px;
+    }
+
+    .navigation > * {
+        margin-bottom: 27px;
+    }
+
+    .navigation > *:last-child {
+        margin-bottom: 0;
+    }
+
+    .navigation__link {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.035em;
+    }
+
+    .navigation__link::before {
+        content: none;
     }
 
     .header {
@@ -323,8 +382,7 @@ a {
 }
 
 .slider{
-    height: 600px;
-    padding-top: 90px;
+    padding-top: 95px;
     border-bottom: 6px solid #ea676b; 
 }
 
@@ -340,8 +398,9 @@ a {
 .slide__container {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: calc(100vw * 0.58);
     overflow: hidden;
+    margin: 0 37px;
 }
 
 .slide {
@@ -350,15 +409,6 @@ a {
     margin: 0 auto;
     height: 100%;
     animation: 0.5s ease-in-out;
-    /* animation: background-color 0s; */
-}
-
-.slide0_background {
-    background-color: #F06C64;
-}
-
-.slide1_background {
-    background-color: #648BF0;
 }
 
 .slide.active,
@@ -373,17 +423,72 @@ a {
 }
 
 .slide__content {
-    width: 93%;
+    width: 100%;
     height: 100%;
-    margin: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+}
+
+.iPhone {
+    position: relative;
+}
+
+.iPhone_vertical {
+    margin-right: 8%;
 }
 
 .slide__content img {
     width: 100%;
+    height: auto;
 }
+
+#img_slide2 {
+    width: 60%;
+}
+
+.iPhone__display {
+    display: none;
+    position: absolute;
+    background-color: black;
+}
+
+.iPhone__display.off {
+    display: block;
+}
+
+.iPhone_vertical .iPhone__display {
+    width: 78%;
+    height: 68.5%;
+    top: 13.5%;
+    left: 6%;
+}
+
+.iPhone_horizontal .iPhone__display {
+    width: 69%;
+    height: 78.5%;
+    top: 5%;
+    left: 12.5%;
+}
+
+.iPhone__button {
+    position: absolute;
+    cursor: pointer;
+}
+
+.iPhone_vertical .iPhone__button {
+    width: 19%;
+    height: 9%;
+    left: 35%;
+    bottom: 7%;
+}
+.iPhone_horizontal .iPhone__button {
+    width: 9%;
+    height: 17%;
+    left: 1.5%;
+    bottom: 47%;
+}
+
 .control {
     position: absolute;
     top: 0;
@@ -448,52 +553,8 @@ a {
 }
 
 
-.iPhone {
-    position: relative;
-}
 
-.iPhone__display {
-    display: none;
-    position: absolute;
-    height: 333px;
-    width: 188px;
-}
 
-.iPhone__button {
-    position: absolute;
-    height: 42px;
-    width: 42px;
-    cursor: pointer;
-}
-
-.iPhone__button:active{
-    box-shadow: inset 10px 10px 15px #BABABA;
-    border-radius: 50%;
-}
-
-.iPhone__display.off {
-    display: block;
-}
-
-.iPhone_vertical .iPhone__display {
-    top: 66px;
-    left: 16px;
-}
-
-.iPhone_horizontal .iPhone__display {
-    left: 133px;
-    bottom: -31px;
-    transform: rotate(90deg);
-}
-
-.iPhone_vertical .iPhone__button {
-    bottom: 36px;
-    left: 87px;
-}
-.iPhone_horizontal .iPhone__button {
-    left: 8px;
-    top: 84px;
-}
 
 .services {
     padding: 68px 0 65px 0;
@@ -553,6 +614,7 @@ a {
 @media (max-width: 375px){
     .services {
         padding: 25px 0 15px 0;
+        scroll-margin-top: 77px;
     }
 }
 
@@ -567,6 +629,7 @@ a {
 @media (max-width: 375px){
     .portfolio {
         padding: 42px 0;
+        scroll-margin-top: 77px;
     }
 }
 
@@ -687,6 +750,7 @@ a {
 @media (max-width: 375px){
     .about-us {
         padding: 33px 0 45px 0;
+        scroll-margin-top: 77px;
     }
     .about-us__text {
         margin-bottom: 14px;
@@ -819,6 +883,7 @@ a {
 @media (max-width: 375px){
     .get-quote {
         padding: 44px 0 42px 0;
+        scroll-margin-top: 77px;
     }
     .get-quote .layout-3-column {
         grid-template-columns: 1fr;

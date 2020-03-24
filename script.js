@@ -39,6 +39,23 @@ NAVIGATION.addEventListener('click', (event) =>{
     }
 })
 
+//выдвижное меню для mobile
+
+const HAMBURGER = document.querySelector('.hamburger');
+let hamburgerActivated = false;
+
+HAMBURGER.addEventListener('click', () => {
+    if(hamburgerActivated){
+        HAMBURGER.classList.remove('rotate');
+        hamburgerActivated = false;
+        document.querySelector('.header__navigation').classList.remove('open');
+    }else {
+        HAMBURGER.classList.add('rotate');
+        hamburgerActivated = true;
+        document.querySelector('.header__navigation').classList.add('open');
+    }
+})
+
 // переключение тегов
 
 TAGS.addEventListener('click', (event) =>{
@@ -79,12 +96,14 @@ let slides = document.querySelectorAll('.slide');
 let slider = document.querySelector('.slider');
 let currentSlide = 0;
 let isEnabled = true;
+let backgroundColors = ['rgb(240, 108, 100)', 'rgb(100, 139, 240)'];
 
 function changeSliderBackground(n){
-    let slide = slides[(n + slides.length) % slides.length];
-    let newBackground = window.getComputedStyle(slide, null).getPropertyValue("background-color");
-    console.log(newBackground);
-    slider.style.background = newBackground;
+    // let slide = slides[(n + slides.length) % slides.length];
+    // let newBackground = window.getComputedStyle(slide, null).getPropertyValue("background-color");
+    // console.log(newBackground);
+    // slider.style.background = newBackground;
+    slider.style.background = backgroundColors[(n + slides.length) % slides.length];
 }
 
 function changeCurrentSlide(n) {
