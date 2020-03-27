@@ -254,7 +254,7 @@ a {
 .navigation__link::before {
     position: relative;
     content: '.';
-    color: #494e62;
+    color: #ffffff;
     left: -13px;
     bottom: 3px;
 }
@@ -314,7 +314,7 @@ a {
     transform-origin: center;
 }
 
-@media (max-width: 375px){
+@media (max-width: 600px){
     .header__navigation {
         background-color: #2D303A;
         margin: 0;
@@ -460,8 +460,8 @@ a {
 
 .iPhone_vertical .iPhone__display {
     width: 78%;
-    height: 68.5%;
-    top: 13.5%;
+    height: 69%;
+    top: 13.2%;
     left: 6%;
 }
 
@@ -550,6 +550,12 @@ a {
     }
     to {
         left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .slider {
+        padding-top: 73px;
     }
 }
 

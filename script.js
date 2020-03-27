@@ -62,9 +62,7 @@ TAGS.addEventListener('click', (event) =>{
 
     removeCollectionClass(TAGS.querySelectorAll('.tag'), 'tag_selected')
     event.target.classList.add('tag_selected');
-
     let imagesId = event.target.getAttribute("id");
-    removeCollectionClass(PARTFOLIO_IMAGES.querySelectorAll('img'),'image_selected');
     if(imagesId == 'all'){
         PARTFOLIO_IMAGES.append(...PARTFOLIO_IMAGES_ALL);
     }else{
@@ -99,10 +97,6 @@ let isEnabled = true;
 let backgroundColors = ['rgb(240, 108, 100)', 'rgb(100, 139, 240)'];
 
 function changeSliderBackground(n){
-    // let slide = slides[(n + slides.length) % slides.length];
-    // let newBackground = window.getComputedStyle(slide, null).getPropertyValue("background-color");
-    // console.log(newBackground);
-    // slider.style.background = newBackground;
     slider.style.background = backgroundColors[(n + slides.length) % slides.length];
 }
 
@@ -239,12 +233,20 @@ document.querySelector('#button_send').addEventListener('click', function(event)
 
 
         fillModal(subject, description);
-        cleanForm(document.querySelector('#quote-form'));
         
         document.querySelector('.modal').classList.add('active');
     }
 })
 
 document.querySelector('#modal__button').addEventListener('click', function(){
+    cleanForm(document.querySelector('#quote-form'));
     document.querySelector('.modal').classList.remove('active');
+})
+
+document.querySelector('#name').addEventListener('click', function() {
+    document.querySelector('#name-hint').classList.remove('active');
+})
+
+document.querySelector('#email').addEventListener('click', function() {
+    document.querySelector('#email-hint').classList.remove('active');
 })
