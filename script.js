@@ -3,6 +3,7 @@ const TAGS = document.querySelector('.portfolio__tags');
 const PARTFOLIO_IMAGES = document.querySelector(".portfolio__images");
 const PARTFOLIO_IMAGES_ALL = PARTFOLIO_IMAGES.querySelectorAll('.portfolio__images > img');
 const HEADER = document.querySelector('.header');
+const HAMBURGER = document.querySelector('.hamburger');
 
 function removeCollectionClass(collection, className){
     collection.forEach((el) => el.classList.remove(className));
@@ -36,12 +37,15 @@ NAVIGATION.addEventListener('click', (event) =>{
     if(clickedElement.classList.contains('navigation__link')){
         NAVIGATION.querySelectorAll('.navigation__link').forEach(el => el.classList.remove('navigation__link_selected'));
         clickedElement.classList.add('navigation__link_selected');
+        if(document.body.clientWidth <= 767) {
+            document.querySelector('.header__navigation').classList.remove('open');
+            HAMBURGER.classList.remove('rotate');
+        }
     }
 })
 
 //выдвижное меню для mobile
 
-const HAMBURGER = document.querySelector('.hamburger');
 let hamburgerActivated = false;
 
 HAMBURGER.addEventListener('click', () => {
